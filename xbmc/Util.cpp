@@ -1835,10 +1835,6 @@ int CUtil::ScanArchiveForAssociatedItems(const std::string& strArchivePath,
       ScanArchiveForAssociatedItems(archInArch, videoNameNoExt, item_exts,  associatedFiles);
       continue;
     }
-    // check that the found filename matches the movie filename
-    int fnl = videoNameNoExt.size();
-    if (fnl && !StringUtils::StartsWithNoCase(URIUtils::GetFileName(strPathInRar), videoNameNoExt))
-      continue;
 
     for (auto ext : item_exts)
     {
